@@ -39,7 +39,7 @@ class App extends React.Component {
     sendForSentimentAnalysis = () => {
         this.setState({ sentiment: true });
         let ret = "";
-        let url = "elvin-sentime.nt-analyzer-chipper-tiger-kc.mybluemix.net";
+        let url = "https://elvin-sentime.nt-analyzer-chipper-tiger-kc.mybluemix.net";
 
         if (this.state.mode === "url") {
             url = url + "/url/sentiment?url=" + document.getElementById("textinput").value;
@@ -49,8 +49,8 @@ class App extends React.Component {
         ret = axios.get(url);
         ret.then((response) => {
             //Include code here to check the sentiment and fomrat the data accordingly
-          
-            this.setState({ sentimentOutput: response.data});
+
+            this.setState({ sentimentOutput: response.data });
 
             let output = response.data;
             if (response.data === "positive") {
@@ -67,7 +67,7 @@ class App extends React.Component {
     sendForEmotionAnalysis = () => {
         this.setState({ sentiment: false });
         let ret = "";
-        let url = "http:elvin-sentiment-analyzer-chipper-tiger-kc.mybluemix.net";
+        let url = "https://elvin-sentiment-analyzer-chipper-tiger-kc.mybluemix.net";
         if (this.state.mode === "url") {
             url = url + "/url/emotion?url=" + document.getElementById("textinput").value;
         } else {
@@ -77,9 +77,9 @@ class App extends React.Component {
 
         ret.then((response) => {
 
-          this.setState({ sentimentOutput: <EmotionTable emotions={response.data} /> });
-        }); 
-          
+            this.setState({ sentimentOutput: <EmotionTable emotions={response.data} /> });
+        });
+
     }
 
 
