@@ -1,7 +1,7 @@
 ---
 applications:
 - path: .
-  name: elvin-sentiment-analyzer #change to be unique in IBM Cloud
+  name: elvinfrontend-sentiment-analyzer #change to be unique in IBM Cloud
   buildpack: sdk-for-nodejs
   memory: 256M
   instances: 1
