@@ -39,7 +39,7 @@ class App extends React.Component {
     sendForSentimentAnalysis = () => {
         this.setState({ sentiment: true });
         let ret = "";
-        let url = "https://elvin-sentime.nt-analyzer-chipper-tiger-kc.mybluemix.net";
+        let url = "https://elvin-sentiment-analyzer-chipper-tiger-kc.mybluemix.net";
 
         if (this.state.mode === "url") {
             url = url + "/url/sentiment?url=" + document.getElementById("textinput").value;
